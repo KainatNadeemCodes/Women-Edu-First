@@ -12,7 +12,7 @@ app = FastAPI(title="NextGenShe API", version="1.0.0")
 # ── CORS ──────────────────────────────────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://nextgenshe.vercel.app"],
+    allow_origins=["https://women-edu-first.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
