@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API = import.meta.env.VITE_API_URL || import.meta.env.VITE_API || 'https://universex01-women-edu-first-backend.hf.space';
 
 const AuthContext = createContext(null)
 
