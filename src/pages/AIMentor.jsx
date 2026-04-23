@@ -73,13 +73,13 @@ export default function AIMentor() {
   const handleKey = e => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(input) }
   }
-
-  const formatMsg = (text) =>
-    text
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/\n/g, '<br/>')
-
+  const formatMsg = (text) => {
+  if (!text) return ""; // Add this safety line!
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/\n/g, '<br/>');
+ };
   return (
     <div className="pt-20 min-h-screen flex flex-col" style={{ height: '100dvh' }}>
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} defaultTab="signup" />}
